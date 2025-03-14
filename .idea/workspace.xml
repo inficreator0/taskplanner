@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1686b755-a3ea-431a-8bef-75c8bde67749" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/taskplanner.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/createExam.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/createTask.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/exams.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/moodUplift.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/startTracking.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tasks.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/vision.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/lottie/confetti.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music/motivational.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/CircularProgressRing.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/DatePicker.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/LinearProgressBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataHandler/getDataFromLocalStorage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataHandler/saveToLocalStorage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/useConfettiAnimation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CreateTask/CreateTask.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Mood/BackgroundMusic.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Mood/Mood.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Mood/Motivation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Onboarding/UserDetails.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PrepareForExams/CreateExam.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PrepareForExams/ExamCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PrepareForExams/Exams.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TaskList/TaskCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TaskList/TaskList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Timer/Timer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VisionBoard/VisionBoard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/colors.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/explore.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/react-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/react-logo@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/react-logo@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Collapsible.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Collapsible.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/HelloWave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/HelloWave.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/IconSymbol.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/IconSymbol.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2u5BE7q41AUGqUFWjMKmEqdjing" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/deepakmaurya/myProjects/taskplanner/assets/music",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "prettierjs.PrettierConfiguration.Package": "/Users/deepakmaurya/myProjects/taskplanner/node_modules/prettier",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "/Users/deepakmaurya/myProjects/taskplanner/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/music" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/CreateTask" />
+      <recent name="$PROJECT_DIR$/src/Timer" />
+      <recent name="$PROJECT_DIR$/src/Mood" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.112" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1686b755-a3ea-431a-8bef-75c8bde67749" name="Changes" comment="" />
+      <created>1741528440955</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741528440955</updated>
+      <workItem from="1741528442199" duration="384000" />
+      <workItem from="1741528882171" duration="108455000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
