@@ -1,3 +1,5 @@
+import { Exam, Subject } from "./CreateExam/CreateExam"
+
 export const getHrMinSecFromSeconds = (seconds: number) => {
   let remaining = 0
   const hr = Math.floor(seconds / 3600)

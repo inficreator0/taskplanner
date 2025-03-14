@@ -33,11 +33,16 @@ export const Exams = () => {
     }, []),
   )
 
+  const onDeleteExam = () => {
+    setExam([])
+  }
+
   const renderItem = ({ item }: { item: ExamData }) => {
     return (
       <ExamCard
         item={item}
         key={item.createdAt}
+        onDeleteExam={onDeleteExam}
       />
     )
   }

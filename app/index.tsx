@@ -30,13 +30,14 @@ const cards = [
 ]
 
 export default function Home() {
-  const [userName, setUserName] = useState('')
+  const [userName, setUserName] = useState('Hii')
 
   useEffect(() => {
     getDataFromLocalStorage(LOCAL_STORAGE_KEYS.UserData).then((data) => {
       if (data) {
         setUserName(data)
       }
+      else setUserName('')
     })
   }, [])
 

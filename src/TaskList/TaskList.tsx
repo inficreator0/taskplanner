@@ -14,7 +14,7 @@ export interface Task {
   id: number
   name: string
   completionStatus: boolean
-  createdOn: Date
+  createdOn: Date | string
 }
 
 export const TaskList = () => {

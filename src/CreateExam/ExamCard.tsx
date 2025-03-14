@@ -7,7 +7,7 @@ import {
   LOCAL_STORAGE_KEYS,
 } from '@/src/constants'
 import { COLORS } from '@/src/colors'
-import { Chapter, ExamData, Subject } from '@/src/CreateExam/CreateExam'
+import { Chapter, Exam, ExamData, Subject } from '@/src/CreateExam/CreateExam'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import { saveToLocalStorage } from '@/dataHandler/saveToLocalStorage'
 import { CircularProgress } from '@/components/CircularProgressRing'
@@ -17,7 +17,7 @@ import { Fontisto } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useState } from 'react'
 
-const SubTasks = ({
+const Subjects = ({
   subjects,
   markChapterDone,
 }: {
@@ -33,21 +33,32 @@ const SubTasks = ({
         backgroundColor: 'transparent',
         flex: 1,
       }}>
-      {subjects?.map((subject, index) => (
-        <ThemedView
-          key={subject.name}
-          style={[styles.subTaskItem, { borderTopWidth: index ? 1 : 0 }]}>
-          {subject.chapters?.length && (
-            <Collapsible title={subject.name}>
-              <Chapters
-                chapters={subject.chapters}
-                markChapterDone={markChapterDone}
-                subjectIndex={index}
-              />
-            </Collapsible>
-          )}
-        </ThemedView>
-      ))}
+      {subjects?.map((subject, index) => {
+        const completedChapters = subject.chapters.filter(
+          (chapter) => chapter.isCompleted,
+        )?.length
+        const totalChapters = subject.chapters?.length
+
+        const perc = (+(completedChapters / totalChapters).toFixed(4) * 100).toString().slice(0, 5) + '%'
+
+        return (
+          <ThemedView
+            key={subject.name}
+            style={[styles.subTaskItem, { borderTopWidth: index ? 1 : 0 }]}>
+            {totalChapters && (
+              <Collapsible
+                title={subject.name}
+                rightText={perc}>
+                <Chapters
+                  chapters={subject.chapters}
+                  markChapterDone={markChapterDone}
+                  subjectIndex={index}
+                />
+              </Collapsible>
+            )}
+          </ThemedView>
+        )
+      })}
     </ThemedView>
   )
 }
@@ -96,12 +107,18 @@ const Chapters = ({
   )
 }
 
-export const ExamCard = ({ item: { exam, createdAt } }: { item: ExamData }) => {
-  const [isUpdated, setIsUpdated] = useState({ updated: false })
+export const ExamCard = ({
+  item: { exam, createdAt },
+  onDeleteExam,
+}: {
+  item: ExamData
+  onDeleteExam: () => void
+}) => {
+  const [isUpdated, setIsUpdated] = useState({ updated: false }) // using this to update the component when chapter status is changed
 
   const deleteExam = () => {
     saveToLocalStorage(LOCAL_STORAGE_KEYS.Exam, null).then()
-    setIsUpdated({ updated: true })
+    onDeleteExam()
   }
 
   const completionStatus = () => {
@@ -114,8 +131,9 @@ export const ExamCard = ({ item: { exam, createdAt } }: { item: ExamData }) => {
       })
     })
 
-    console.log(totalChapter, completedChapter, 'percentage ')
-    return +(completedChapter / totalChapter).toString().slice(0, 5) * 100
+    return +(+(completedChapter / totalChapter).toFixed(4) * 100)
+      .toString()
+      .slice(0, 4)
   }
 
   const daysProgress = getDateDifference(createdAt, exam.endDate)
@@ -126,7 +144,6 @@ export const ExamCard = ({ item: { exam, createdAt } }: { item: ExamData }) => {
     (subjectIndex: number) =>
     (value: boolean) =>
     () => {
-      console.log(chapterIndex, subjectIndex, 'iondexsss')
       const updatedExam = updateDataInForm(
         `exam.subjects.${subjectIndex}.chapters.${chapterIndex}.isCompleted`,
         value,
@@ -136,9 +153,8 @@ export const ExamCard = ({ item: { exam, createdAt } }: { item: ExamData }) => {
         exam: updatedExam,
         createdAt,
       }
-
-      console.log(updatedExam, 'exaam updated')
       saveToLocalStorage(LOCAL_STORAGE_KEYS.Exam, examData).then(() => {
+        // using this state to rerender the card
         setIsUpdated({ updated: true })
       })
     }
@@ -191,7 +207,7 @@ export const ExamCard = ({ item: { exam, createdAt } }: { item: ExamData }) => {
         />
       </ThemedView>
       <ThemedView style={styles.subjectContainer}>
-        <SubTasks
+        <Subjects
           subjects={exam.subjects}
           markChapterDone={markChapterDone}
         />

@@ -6,7 +6,7 @@ import {
   TextInput,
 } from 'react-native'
 import { COLORS } from '@/src/colors'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ThemedText } from '@/components/ThemedText'
 import { ThemedView } from '@/components/ThemedView'
 import { saveToLocalStorage } from '@/dataHandler/saveToLocalStorage'
@@ -16,6 +16,7 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import { ScrollView } from 'react-native-gesture-handler'
 import { DatePickerInput } from '@/components/DatePicker'
 import { removeFromForm, updateDataInForm } from '@/src/utils'
+import { getDataFromLocalStorage } from '@/dataHandler/getDataFromLocalStorage'
 
 export interface Exam {
   name: string
@@ -52,6 +53,14 @@ export const CreateExam = () => {
     endDate: new Date(),
   })
 
+  useEffect(() => {
+    getDataFromLocalStorage(LOCAL_STORAGE_KEYS.Exam).then((data) => {
+      if (data) {
+        setExam(data?.exam)
+      }
+    })
+  }, [])
+
   const onTextChange =
     (key: string) => (value: string | Date | boolean | undefined) => {
       const updatedExam = updateDataInForm(key, value, exam)
@@ -76,7 +85,7 @@ export const CreateExam = () => {
 
   const addSubjectInput = () => {
     const updatedExams = { ...exam }
-    updatedExams.subjects.push({ name: '', chapters: [], isCompleted: false })
+    updatedExams.subjects.push({ name: '', chapters: [{name: '', isCompleted: false}], isCompleted: false })
     setExam(updatedExams)
   }
 
@@ -106,7 +115,7 @@ export const CreateExam = () => {
         showsVerticalScrollIndicator={false}
         horizontal={false}>
         <TextInput
-          placeholder={'Add exam...'}
+          placeholder={'Add exam...'} 
           style={styles.textInput}
           value={exam.name}
           onChangeText={onTextChange('exam.name')}

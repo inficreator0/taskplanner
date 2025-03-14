@@ -7,47 +7,60 @@ import { getDataFromLocalStorage } from '@/dataHandler/getDataFromLocalStorage'
 import { LOCAL_STORAGE_KEYS } from '@/src/constants'
 import { Task } from '@/src/TaskList/TaskList'
 import { ThemedText } from '@/components/ThemedText'
+import { updateDataInForm } from '../utils'
+import { FlatList } from 'react-native-gesture-handler'
 
 export default function CreateTask() {
-  const [value, setValue] = useState<string>('')
   const [tasks, setTasks] = useState<Task[]>([])
+  const [alreadyCreatedTasks, setAlreadyCreatedTask] = useState<Task[]>([])
 
-  const onTextChange = (text: string) => {
-    setValue(text)
+  const onTextChange = (index: number) => (text: string) => {
+    const updatedValue = [...tasks]
+    updatedValue[index] = { ...updatedValue[index], name: text}
+    setTasks(updatedValue)
   }
 
   useEffect(() => {
     getDataFromLocalStorage(LOCAL_STORAGE_KEYS.Tasks).then((data) => {
-      setTasks(data)
+      setAlreadyCreatedTask(data)
+      setTasks([{
+        id: data.length + 1,
+        name: '',
+        completionStatus: false,
+        createdOn: new Date().toISOString(),
+      }])
     })
   }, [])
 
   const createTask = () => {
-    const taskId = tasks ? tasks?.[tasks?.length - 1]?.id + 1 : 1
-    const task = {
-      id: taskId,
-      name: value,
-      completionStatus: 0,
-      createdOn: new Date().toISOString(),
-    }
-
-    const newTask = tasks ? [...tasks, task] : [task]
-
-    saveToLocalStorage(LOCAL_STORAGE_KEYS.Tasks, newTask).then(() => {
+    const newTasks = [...alreadyCreatedTasks, ...tasks]
+    saveToLocalStorage(LOCAL_STORAGE_KEYS.Tasks, newTasks).then(() => {
       router.back()
     })
   }
 
-  const addTask = () => {}
+  const addTask = () => {
+    const newTasks = [...tasks]
+    newTasks.push({
+      id: alreadyCreatedTasks.length + newTasks.length + 1,
+      name: '',
+      completionStatus: false,
+      createdOn: new Date().toISOString(),
+    })
+    setTasks(newTasks)
+  }
 
   return (
     <View style={styles.container}>
-      <TextInput
-        placeholder={'Task name...'}
-        style={styles.textInput}
-        value={value}
-        onChangeText={onTextChange}
-      />
+      {tasks.map((task, index) => (
+        <TextInput
+          placeholder={'Task name...'}
+          key={task.id}
+          style={styles.textInput}
+          value={task.name}
+          onChangeText={onTextChange(index)}
+        />
+      ))}
       <Pressable onPress={addTask}>
         <ThemedText
           type={'defaultSemiBold'}
@@ -57,7 +70,6 @@ export default function CreateTask() {
       </Pressable>
       <Button
         title={'Create'}
-        disabled={value.length === 0}
         onPress={createTask}
         color={COLORS.buttonColor}
       />
