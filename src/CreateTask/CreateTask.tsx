@@ -7,8 +7,6 @@ import { getDataFromLocalStorage } from '@/dataHandler/getDataFromLocalStorage'
 import { LOCAL_STORAGE_KEYS } from '@/src/constants'
 import { Task } from '@/src/TaskList/TaskList'
 import { ThemedText } from '@/components/ThemedText'
-import { updateDataInForm } from '../utils'
-import { FlatList } from 'react-native-gesture-handler'
 
 export default function CreateTask() {
   const [tasks, setTasks] = useState<Task[]>([])
@@ -16,19 +14,32 @@ export default function CreateTask() {
 
   const onTextChange = (index: number) => (text: string) => {
     const updatedValue = [...tasks]
-    updatedValue[index] = { ...updatedValue[index], name: text}
+    updatedValue[index] = { ...updatedValue[index], name: text }
     setTasks(updatedValue)
   }
 
   useEffect(() => {
     getDataFromLocalStorage(LOCAL_STORAGE_KEYS.Tasks).then((data) => {
-      setAlreadyCreatedTask(data)
-      setTasks([{
-        id: data.length + 1,
-        name: '',
-        completionStatus: false,
-        createdOn: new Date().toISOString(),
-      }])
+      if (data) {
+        setAlreadyCreatedTask(data)
+        setTasks([
+          {
+            id: data.length + 1,
+            name: '',
+            completionStatus: false,
+            createdOn: new Date().toISOString(),
+          },
+        ])
+      } else {
+        setTasks([
+          {
+            id: 1,
+            name: '',
+            completionStatus: false,
+            createdOn: new Date().toISOString(),
+          },
+        ])
+      }
     })
   }, [])
 
