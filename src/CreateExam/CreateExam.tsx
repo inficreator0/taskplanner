@@ -147,7 +147,7 @@ export const CreateExam = () => {
                   </Pressable>
                 )}
               </ThemedView>
-              {subject.chapters?.map((chapter, chapterIndex) => (
+              {subject?.chapters?.map((chapter, chapterIndex) => (
                 <ThemedView
                   style={styles.chapters}
                   key={`${index}-${chapterIndex}`}>
