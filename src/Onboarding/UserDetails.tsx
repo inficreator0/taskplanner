@@ -1,33 +1,30 @@
-import React, { useEffect, useState } from 'react'
-import {
-  Modal,
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native'
-import { getDataFromLocalStorage } from '@/dataHandler/getDataFromLocalStorage'
+import React, { useState } from 'react'
+import { Modal, Pressable, StyleSheet, TextInput, View } from 'react-native'
 import { LOCAL_STORAGE_KEYS } from '@/src/constants'
 import { saveToLocalStorage } from '@/dataHandler/saveToLocalStorage'
+import { COLORS } from '@/src/colors'
+import { ThemedText } from '@/components/ThemedText'
+import { HelloWave } from '@/components/HelloWave'
+import * as Updates from 'expo-updates'
 
 export const UserDetailsModal = () => {
-  const [modalVisible, setModalVisible] = useState(false)
+  const [modalVisible, setModalVisible] = useState(true)
   const [name, setName] = useState('')
 
-  useEffect(() => {
-    getDataFromLocalStorage(LOCAL_STORAGE_KEYS.UserData).then((data) => {
-      if (data) {
-        setName(data)
-      }
-    })
-  }, [])
+  const restartApp = async () => {
+    try {
+      await Updates.reloadAsync() // Reloads the app
+    } catch (error) {
+      console.error('Error restarting app:', error)
+    }
+  }
 
   // Save user data and close modal
   const handleSaveDetails = async () => {
     if (name) {
       saveToLocalStorage(LOCAL_STORAGE_KEYS.UserData, name).then()
       setModalVisible(false)
+      restartApp().then()
     } else {
       alert('Please fill all details')
     }
@@ -38,22 +35,37 @@ export const UserDetailsModal = () => {
       <Modal
         visible={modalVisible}
         transparent
-        animationType='slide'>
+        animationType='fade'>
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
-            <Text style={styles.title}>Enter Your Details</Text>
-
+            <HelloWave
+              waveCount={6}
+              size={32}
+            />
+            <ThemedText
+              style={styles.title}
+              type={'subtitle'}>
+              Hii, I'm Mylo 😃
+            </ThemedText>
             <TextInput
-              placeholder='Name'
+              placeholder='What should i call you?'
               value={name}
+              autoFocus
               onChangeText={setName}
               style={styles.input}
             />
             <Pressable
               onPress={handleSaveDetails}
               style={styles.button}>
-              <Text style={styles.buttonText}>Save</Text>
+              <ThemedText
+                style={styles.buttonText}
+                type={'subtitle'}>
+                SAVE
+              </ThemedText>
             </Pressable>
+            <ThemedText style={styles.restartText}>
+              App will restart after save
+            </ThemedText>
           </View>
         </View>
       </Modal>
@@ -66,6 +78,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: COLORS.backgroundColor,
   },
   modalContainer: {
     flex: 1,
@@ -82,19 +95,18 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    color: 'white',
-    marginBottom: 15,
+    color: COLORS.textColor,
+    marginBottom: 16,
   },
   input: {
     width: '100%',
     height: 40,
     borderWidth: 1,
     borderColor: '#888',
-    backgroundColor: '#333',
-    color: 'white',
+    backgroundColor: COLORS.textColor,
     borderRadius: 8,
-    paddingHorizontal: 10,
-    marginBottom: 10,
+    paddingHorizontal: 12,
+    marginBottom: 12,
   },
   button: {
     marginTop: 10,
@@ -107,5 +119,10 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     fontSize: 16,
+  },
+  restartText: {
+    fontSize: 12,
+    marginTop: 12,
+    color: COLORS.lightGreyColor,
   },
 })

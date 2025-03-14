@@ -5,59 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1686b755-a3ea-431a-8bef-75c8bde67749" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/taskplanner.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/createExam.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/createTask.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/exams.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/moodUplift.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/startTracking.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/tasks.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/vision.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/lottie/confetti.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/music/motivational.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/CircularProgressRing.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/DatePicker.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/LinearProgressBar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataHandler/getDataFromLocalStorage.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataHandler/saveToLocalStorage.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hooks/useConfettiAnimation.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CreateTask/CreateTask.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Mood/BackgroundMusic.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Mood/Mood.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Mood/Motivation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Onboarding/UserDetails.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PrepareForExams/CreateExam.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PrepareForExams/ExamCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PrepareForExams/Exams.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TaskList/TaskCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TaskList/TaskList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Timer/Timer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/VisionBoard/VisionBoard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/colors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/explore.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/adaptive-icon.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/react-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/react-logo@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/react-logo@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Collapsible.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Collapsible.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/adaptive-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/partial-react-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/splash-icon.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/HelloWave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/HelloWave.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/IconSymbol.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/IconSymbol.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Onboarding/UserDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Onboarding/UserDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaskList/TaskCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskList/TaskCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaskList/TaskList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskList/TaskList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +51,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/deepakmaurya/myProjects/taskplanner/assets/music",
+    "last_opened_file_path": "/Users/deepakmaurya/myProjects/taskplanner/assets/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -104,6 +68,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/assets/music" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -130,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1741528440955</updated>
       <workItem from="1741528442199" duration="384000" />
-      <workItem from="1741528882171" duration="108455000" />
+      <workItem from="1741528882171" duration="117664000" />
     </task>
     <servers />
   </component>

@@ -5,12 +5,12 @@ import { cardBackgroundColor, cardBorderColor } from '@/src/constants'
 import { Task } from '@/src/TaskList/TaskList'
 import { useState } from 'react'
 import LottieView from 'lottie-react-native'
-import { Entypo } from '@expo/vector-icons'
 import { COLORS } from '@/src/colors'
 import Animated from 'react-native-reanimated'
 import { useConfettiAnimation } from '@/hooks/useConfettiAnimation'
 import { LinearGradient } from 'expo-linear-gradient'
 import { getDate } from '@/src/utils'
+import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 
 export const TaskCard = ({
   item,
@@ -44,6 +44,16 @@ export const TaskCard = ({
         COLORS.backgroundColor,
       ]}
       style={styles.taskItemContainer}>
+      <Pressable
+        onPress={deleteTask}
+        style={{ position: 'absolute', right: -8, top: -8 }}
+        hitSlop={{ top: 10, bottom: 0, left: 10 }}>
+        <MaterialIcons
+          name='cancel'
+          size={20}
+          color={COLORS.lightGreyColor}
+        />
+      </Pressable>
       {maskDone && (
         <Animated.View
           style={[
@@ -73,21 +83,16 @@ export const TaskCard = ({
         <ThemedText style={styles.createOn}>
           Created : {getDate(item.createdOn)}
         </ThemedText>
-        <Pressable
-          onPress={deleteTask}
-          hitSlop={{ top: 10, bottom: 0, left: 10 }}>
-          <Entypo
-            name='cross'
-            size={24}
-            color={COLORS.redCrossColor}
-          />
-        </Pressable>
       </ThemedView>
       <View style={styles.flexRow}>
         <ThemedText style={styles.taskName}>{item.name}</ThemedText>
-        <Pressable onPress={handleDoneMark}>
-          <ThemedText style={styles.status}>{'Mark as done'}</ThemedText>
-        </Pressable>
+        {maskDone ? (
+          <ThemedText style={{}}>✅</ThemedText>
+        ) : (
+          <Pressable onPress={handleDoneMark}>
+            <ThemedText style={styles.status}>{'Mark as done'}</ThemedText>
+          </Pressable>
+        )}
       </View>
     </LinearGradient>
   )

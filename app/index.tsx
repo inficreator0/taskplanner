@@ -5,11 +5,15 @@ import { LinearGradient } from 'expo-linear-gradient'
 import {
   cardBackgroundColor,
   cardBorderColor,
+  LOCAL_STORAGE_KEYS,
   WINDOW_WIDTH,
 } from '@/src/constants'
 import { ThemedText } from '@/components/ThemedText'
 import { router } from 'expo-router'
 import { COLORS } from '@/src/colors'
+import { useEffect, useState } from 'react'
+import { getDataFromLocalStorage } from '@/dataHandler/getDataFromLocalStorage'
+import { UserDetailsModal } from '@/src/Onboarding/UserDetails'
 
 interface Cards {
   id: number
@@ -26,6 +30,16 @@ const cards = [
 ]
 
 export default function Home() {
+  const [userName, setUserName] = useState('')
+
+  useEffect(() => {
+    getDataFromLocalStorage(LOCAL_STORAGE_KEYS.UserData).then((data) => {
+      if (data) {
+        setUserName(data)
+      }
+    })
+  }, [])
+
   const renderItems = ({ item }: { item: Cards }) => {
     const handleOnPress = () => {
       item.redirectionUrl && router.push(item.redirectionUrl as any)
@@ -74,6 +88,7 @@ export default function Home() {
           </ThemedView>
         }
       />
+      {!userName.length && <UserDetailsModal />}
     </ThemedView>
   )
 }

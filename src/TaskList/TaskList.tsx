@@ -56,7 +56,7 @@ export const TaskList = () => {
       colors={[COLORS.backgroundColor, COLORS.backgroundColor]}
       style={styles.container}>
       <ThemedView style={styles.subHeader}>
-        <ThemedText style={styles.headerText}>Today: 1 completed</ThemedText>
+        {/*<ThemedText style={styles.headerText}>Today: 1 completed</ThemedText>*/}
         <Pressable
           style={styles.button}
           onPress={handleOnPress}>
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: 'transparent',
     height: 40,
-    marginVertical: 4,
+    marginVertical: 6,
   },
   headerText: {
     color: COLORS.textColor,
