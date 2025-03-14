@@ -20,7 +20,6 @@ import { ThemedText } from '@/components/ThemedText'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { getDataFromLocalStorage } from '@/dataHandler/getDataFromLocalStorage'
 import { COLORS } from '@/src/colors'
-import { saveToLocalStorage } from '@/dataHandler/saveToLocalStorage'
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync().then()
@@ -66,7 +65,6 @@ export default function RootLayout() {
       }
       setLocalDataLoaded(true)
     })
-    saveToLocalStorage(LOCAL_STORAGE_KEYS.Exam, null)
   }, [])
 
   if (!loaded || !localDataLoaded) {
