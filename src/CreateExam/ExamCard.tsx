@@ -7,7 +7,7 @@ import {
   LOCAL_STORAGE_KEYS,
 } from '@/src/constants'
 import { COLORS } from '@/src/colors'
-import { Chapter, ExamData, Subject } from '@/src/PrepareForExams/CreateExam'
+import { Chapter, ExamData, Subject } from '@/src/CreateExam/CreateExam'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import { saveToLocalStorage } from '@/dataHandler/saveToLocalStorage'
 import { CircularProgress } from '@/components/CircularProgressRing'

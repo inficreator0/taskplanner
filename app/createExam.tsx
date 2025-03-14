@@ -1,5 +1,5 @@
-import { CreateExam } from '@/src/PrepareForExams/CreateExam'
+import { CreateExam } from '@/src/CreateExam/CreateExam'
 
-export default function createExam() {
+export default function createExamRoute() {
   return <CreateExam />
 }

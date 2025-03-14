@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1686b755-a3ea-431a-8bef-75c8bde67749" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/images/adaptive-icon.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/adaptive-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/partial-react-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/splash-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/HelloWave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/HelloWave.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Onboarding/UserDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Onboarding/UserDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskList/TaskCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskList/TaskCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskList/TaskList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskList/TaskList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/createExam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/createExam.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/exams.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/exams.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CreateTask/CreateTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreateTask/CreateTask.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrepareForExams/CreateExam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreateExam/CreateExam.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrepareForExams/ExamCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreateExam/ExamCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrepareForExams/Exams.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreateExam/Exams.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1741528440955</updated>
       <workItem from="1741528442199" duration="384000" />
-      <workItem from="1741528882171" duration="117664000" />
+      <workItem from="1741528882171" duration="118704000" />
     </task>
     <servers />
   </component>

@@ -89,6 +89,11 @@ export const CreateExam = () => {
     setExam(updatedExams)
   }
 
+  const isCreateDisabled =
+    exam.name?.length === 0 ||
+    exam.subjects?.[0]?.name.length === 0 ||
+    exam.subjects?.[0]?.chapters?.[0]?.name?.length === 0
+
   return (
     <KeyboardAvoidingView style={styles.container}>
       <ThemedText
@@ -130,15 +135,17 @@ export const CreateExam = () => {
                   value={subject.name}
                   onChangeText={onTextChange(`exam.subjects.${index}.name`)}
                 />
-                <Pressable
-                  onPress={removeObject(`exam.subjects.${index}`)}
-                  hitSlop={{ top: 10, right: 10, bottom: 10, left: 10 }}>
-                  <MaterialIcons
-                    name='cancel'
-                    size={20}
-                    color={COLORS.lightGreyColor}
-                  />
-                </Pressable>
+                {exam.subjects.length > 1 && (
+                  <Pressable
+                    onPress={removeObject(`exam.subjects.${index}`)}
+                    hitSlop={{ top: 10, right: 10, bottom: 10, left: 10 }}>
+                    <MaterialIcons
+                      name='cancel'
+                      size={20}
+                      color={COLORS.lightGreyColor}
+                    />
+                  </Pressable>
+                )}
               </ThemedView>
               {subject.chapters?.map((chapter, chapterIndex) => (
                 <ThemedView
@@ -153,17 +160,19 @@ export const CreateExam = () => {
                       `exam.subjects.${index}.chapters.${chapterIndex}.name`,
                     )}
                   />
-                  <Pressable
-                    onPress={removeObject(
-                      `exam.subjects.${index}.chapters.${chapterIndex}`,
-                    )}
-                    hitSlop={{ top: 10, right: 10, bottom: 10, left: 10 }}>
-                    <MaterialIcons
-                      name='cancel'
-                      size={20}
-                      color={COLORS.lightGreyColor}
-                    />
-                  </Pressable>
+                  {subject.chapters.length > 1 && (
+                    <Pressable
+                      onPress={removeObject(
+                        `exam.subjects.${index}.chapters.${chapterIndex}`,
+                      )}
+                      hitSlop={{ top: 10, right: 10, bottom: 10, left: 10 }}>
+                      <MaterialIcons
+                        name='cancel'
+                        size={20}
+                        color={COLORS.lightGreyColor}
+                      />
+                    </Pressable>
+                  )}
                 </ThemedView>
               ))}
               <Pressable onPress={addChapterInput(index)}>
@@ -193,12 +202,18 @@ export const CreateExam = () => {
             onDateChange={onTextChange('exam.endDate')}
           />
         </ThemedView>
+
         <Button
           title={'Create'}
-          disabled={exam.name?.length === 0}
+          disabled={isCreateDisabled}
           onPress={createTask}
           color={COLORS.buttonColor}
         />
+        {isCreateDisabled && (
+          <ThemedText style={styles.infoText}>
+            Add at least one subject and one chapter
+          </ThemedText>
+        )}
       </ScrollView>
     </KeyboardAvoidingView>
   )
@@ -271,5 +286,10 @@ const styles = StyleSheet.create({
     left: -12,
     height: 10,
     borderLeftWidth: 0,
+  },
+  infoText: {
+    color: COLORS.lightGreyColor,
+    fontSize: 12,
+    alignSelf: 'center',
   },
 })

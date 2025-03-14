@@ -1,4 +1,4 @@
-import { Exams } from '@/src/PrepareForExams/Exams'
+import { Exams } from '@/src/CreateExam/Exams'
 
 export default function exams() {
   return <Exams />

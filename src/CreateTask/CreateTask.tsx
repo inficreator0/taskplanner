@@ -1,4 +1,4 @@
-import { Button, StyleSheet, TextInput, View } from 'react-native'
+import { Button, Pressable, StyleSheet, TextInput, View } from 'react-native'
 import { COLORS } from '@/src/colors'
 import { useEffect, useState } from 'react'
 import { saveToLocalStorage } from '@/dataHandler/saveToLocalStorage'
@@ -6,6 +6,7 @@ import { router } from 'expo-router'
 import { getDataFromLocalStorage } from '@/dataHandler/getDataFromLocalStorage'
 import { LOCAL_STORAGE_KEYS } from '@/src/constants'
 import { Task } from '@/src/TaskList/TaskList'
+import { ThemedText } from '@/components/ThemedText'
 
 export default function CreateTask() {
   const [value, setValue] = useState<string>('')
@@ -37,6 +38,8 @@ export default function CreateTask() {
     })
   }
 
+  const addTask = () => {}
+
   return (
     <View style={styles.container}>
       <TextInput
@@ -45,6 +48,13 @@ export default function CreateTask() {
         value={value}
         onChangeText={onTextChange}
       />
+      <Pressable onPress={addTask}>
+        <ThemedText
+          type={'defaultSemiBold'}
+          style={styles.subtaskButtonText}>
+          + ADD TASK
+        </ThemedText>
+      </Pressable>
       <Button
         title={'Create'}
         disabled={value.length === 0}
@@ -67,5 +77,10 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     color: COLORS.backgroundColor,
     padding: 12,
+  },
+  subtaskButtonText: {
+    color: COLORS.blueTextColor,
+    fontSize: 12,
+    marginTop: 6,
   },
 })
